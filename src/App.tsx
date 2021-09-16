@@ -91,6 +91,17 @@ const itemList = [{name:'（蒸）上海菜肉包',price:7,catId:3,shortForm:'�
             </Container>
           </Card.Text>
         ))}
+        <Card.Text style={{ margin: '10px 0', fontSize: 20 }}>
+            <Container>
+              <Row>
+                <Col style={{ fontWeight: 'bold' }} xs={5}>總計</Col>
+                <Col />
+                <Col style={{ fontWeight: 'bold' }}>
+                  ${_.sum(result.map(e => itemList.find(item => item.name == e)?.price)) || 0}
+                </Col>
+              </Row>
+            </Container>
+          </Card.Text>
       </Card>
       </Col>
     </Row>
